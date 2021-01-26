@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Views
+namespace XamarinUI.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage

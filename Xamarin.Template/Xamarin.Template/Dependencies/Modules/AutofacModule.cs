@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Factory;
 using Navigation;
-using Views;
+using XamarinUI.Views;
 using Xamarin.Forms;
 
 namespace Bootstrapping.Modules

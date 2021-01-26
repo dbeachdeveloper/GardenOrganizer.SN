@@ -3,11 +3,12 @@ using Messages;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Views;
+using XamarinUI.Views;
 using System.Collections.Generic;
 using Android.Runtime;
 using Messages.Android;
 using Plugin.Permissions;
+using System.IO;
 
 namespace Xamarin.Template.Droid
 {
@@ -30,7 +31,11 @@ namespace Xamarin.Template.Droid
                 { typeof(IToastMessage), typeof(ToastMessage) }
             };
 
-            App app = new App();
+            string dbName = "gardenorganizer_db.sqlite";
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fullPath = Path.Combine(folderPath, dbName);
+
+            App app = new App(fullPath);
             app.LoadTypes(mappedTypes);
 
             LoadApplication(app);

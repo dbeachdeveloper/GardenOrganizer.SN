@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
 using Messages;
 using Messages.iOS;
 using UIKit;
-using Views;
+using XamarinUI.Views;
 
 namespace Xamarin.Template.iOS
 {
@@ -33,7 +34,11 @@ namespace Xamarin.Template.iOS
                 { typeof(IToastMessage), typeof(ToastMessage) }
             };
 
-            App _app = new App();
+            string dbName = "matchupanalyzer_db.sqlite";
+            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string fullPath = Path.Combine(folderPath, dbName);
+
+            App _app = new App(fullPath);
             _app.LoadTypes(mappedTypes);
 
             LoadApplication(_app);

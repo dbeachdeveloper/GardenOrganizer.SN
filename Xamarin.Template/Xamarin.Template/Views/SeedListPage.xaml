@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vc="clr-namespace:ViewCells"
+             x:Class="XamarinUI.Views.SeedListPage">
+    
+    <StackLayout Style="{StaticResource MainStackLayout}">
+        <StackLayout Style="{StaticResource HeaderStackLayout}">
+            <Label Text="Seed List" 
+                   Style="{StaticResource HeaderLabel}"/>
+        </StackLayout>
+
+        <StackLayout Style="{StaticResource MainBodyStackLayout}">
+
+            <ListView x:Name="SeedTypeListView" 
+                      ItemsSource="{Binding OCSeedList}"
+                      SelectedItem="{Binding SelectedItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <vc:SeedViewCell ImageUrl="{Binding ImageUrl}"
+                                            Type="{Binding Type}"
+                                            Variety="{Binding Variety}"
+                                            Manufacturer="{Binding Manufacturer}"
+                                            SproutDays="{Binding SproutDays}"
+                                            Temperatures="{Binding Temperatures}"
+                                            SunLight="{Binding SunLight}"
+                                            SeedDepth="{Binding SeedDepth}"
+                                            PlantSpacing="{Binding PlantSpacing}"
+                                            Frost="{Binding Frost}"
+                                            Purchase="{Binding Purchase}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+        <Button Command="{Binding AddNewSeedTypeCommand}" 
+                Style="{StaticResource StandardButton}" 
+                Text="Add New" HorizontalOptions="FillAndExpand"/>
+
+        <StackLayout Style="{StaticResource FooterStackLayout}">
+            <Label Text="Garden Organizer" 
+                   Style="{StaticResource FooterLabel}"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

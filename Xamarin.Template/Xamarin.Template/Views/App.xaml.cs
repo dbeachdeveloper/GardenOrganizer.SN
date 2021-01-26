@@ -2,13 +2,17 @@
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-namespace Views
+namespace XamarinUI.Views
 {
     public partial class App : Application
     {
         public App()
+        {
+            InitializeComponent();
+        }
+
+        public App(string databaseLocation)
         {
             InitializeComponent();
         }

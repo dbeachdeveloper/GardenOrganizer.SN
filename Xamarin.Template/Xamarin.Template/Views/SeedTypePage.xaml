@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vc="clr-namespace:ViewCells"
+             x:Class="XamarinUI.Views.SeedTypePage">
+
+    <StackLayout Style="{StaticResource MainStackLayout}">
+        <StackLayout Style="{StaticResource HeaderStackLayout}">
+            <Label Text="Select Seed Type" 
+                   Style="{StaticResource HeaderLabel}"/>
+        </StackLayout>
+
+        <StackLayout Style="{StaticResource MainBodyStackLayout}">
+            
+            <ListView x:Name="SeedTypeListView" 
+                      ItemsSource="{Binding OCSeedTypes}"
+                      SelectedItem="{Binding SelectedItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <vc:SeedTypeViewCell Type="{Binding Type}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+        <Button Command="{Binding AddNewSeedTypeCommand}" 
+                Style="{StaticResource StandardButton}" 
+                Text="Add New" HorizontalOptions="FillAndExpand"/>
+
+        <StackLayout Style="{StaticResource FooterStackLayout}">
+            <Label Text="Garden Organizer" 
+                   Style="{StaticResource FooterLabel}"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

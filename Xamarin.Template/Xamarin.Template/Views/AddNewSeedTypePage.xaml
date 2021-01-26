@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinUI.Views.AddNewSeedTypePage">
+    
+    <StackLayout Style="{StaticResource MainStackLayout}">
+
+        <StackLayout Style="{StaticResource HeaderStackLayout}">
+            <Label Text="New Seed Type" 
+                   Style="{StaticResource HeaderLabel}"/>
+        </StackLayout>
+
+        <StackLayout Style="{StaticResource MainBodyStackLayout}">
+            <StackLayout Style="{StaticResource EntryStackLayout}">
+                <Entry Placeholder="Enter New Seed Type"
+                       Text="{Binding Type, Mode=TwoWay}"
+                       Style="{StaticResource StandardEntry}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Add"
+                        Command="{Binding AddNewSeedTypeCommand}"
+                        Style="{StaticResource StandardButton}"/>
+                    <Button Text="Cancel"
+                        Command="{Binding CancelCommand}"
+                        Style="{StaticResource StandardButton}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Style="{StaticResource FooterStackLayout}">
+            <Label Text="Garden Organizer" Style="{StaticResource FooterLabel}"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

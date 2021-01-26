@@ -17,7 +17,7 @@ namespace Xamarin.Template.UWP
                 { typeof(IToastMessage), typeof(ToastMessage) }
             };
 
-            Views.App _app = new Views.App();
+            XamarinUI.Views.App _app = new XamarinUI.Views.App();
             _app.LoadTypes(mappedTypes);
 
             LoadApplication(_app);
